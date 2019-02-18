@@ -1,12 +1,13 @@
 package c14;
 
 import java.awt.*;
+import static java.lang.Thread.sleep;
 
 public class Snake{
     public final int width;
     public final int height;
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public Snake(int xPan, int yPan){
         this.width=xPan/25;
@@ -15,16 +16,14 @@ public class Snake{
         this.y=0;
     }
 
-    public int getX(){
-        int tmp=x;
+    public void move(){
         x++;
-        System.out.println(x);
-        return tmp;
-    }
-    public int getY(){
-        int tmp=y;
         y++;
-        System.out.println(y);
-        return tmp;
+        System.out.println("Snake x: "+x);
+        System.out.println("Snake y: "+y);
+    }
+
+    public void getsBigger(){
+        System.out.println("I'am big boi");
     }
 }
