@@ -1,24 +1,32 @@
 package c14;
 
-public class Apple {
-    public final int width;
-    public final int height;
-    public int x;
-    public int y;
+import java.util.*;
 
-    public Apple(int xPan, int yPan){
+class Apple {
+    final int width;
+    final int height;
+    private final int xPan;
+    private final int yPan;
+    int x;
+    int y;
+
+    Random random;
+
+    Apple(int xPan, int yPan){
+        this.xPan=xPan;
+        this.yPan=yPan;
         this.width=xPan/50;
         this.height=yPan/50;
-        this.x=xPan/3;
-        this.y=yPan/3;
+        random = new Random();
+        changeXY();
     }
 
-    public void changeXY(){
-        //x=(int)((Math.random()*width*50)-width);
-        //y=(int)((Math.random()*height*50)-height);
-        x+=70;
-        y+=70;
-        System.out.println("Apple x: "+x);
-        System.out.println("Apple y: "+y);
+    void changeXY(){
+        while ((((x=random.nextInt(xPan-width)))%(xPan / 20)) != 0){
+        }
+        while ((((y=random.nextInt(yPan-height)))%(yPan/20))!= 0){
+        }
+        x+=(width/2);
+        y+=(height/2);
     }
 }
