@@ -47,35 +47,15 @@ public class MyPanel extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode()==KeyEvent.VK_RIGHT&&snack.prev!=2&&snack.vector!=1){
             snack.vector=1;
-            try {
-                sleep(5);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
         }
         if (e.getKeyCode()==KeyEvent.VK_LEFT&&snack.prev!=1&&snack.vector!=2){
             snack.vector=2;
-            try {
-                sleep(5);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
         }
         if (e.getKeyCode()==KeyEvent.VK_DOWN&&snack.prev!=4&&snack.vector!=3){
             snack.vector=3;
-            try {
-                sleep(5);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
         }
         if (e.getKeyCode()==KeyEvent.VK_UP&&snack.prev!=3&&snack.vector!=4){
             snack.vector=4;
-            try {
-                sleep(5);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
         }
     }
     @Override

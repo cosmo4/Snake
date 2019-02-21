@@ -59,16 +59,5 @@ public class Main {
                 myFrame[0].myPanel.snack.bufor();
             }
         }).start();
-        new Thread(() -> {
-            while (true) {
-                try {
-                    sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                for(int i=0; i<myFrame[0].myPanel.snack.tail.size(); i++)
-                myFrame[0].myPanel.snack.tail.get(i).checkTurnPoints();
-            }
-        }).start();
     }
 }

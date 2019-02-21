@@ -48,11 +48,6 @@ class Snake {
                 e.printStackTrace();
             }
         }
-        if (tail.size() > 0) {
-            for (int i = 0; i < tail.size(); i++) {
-                tail.get(i).move();
-            }
-        }
     }
 
     void getsTailPart() {
@@ -67,8 +62,9 @@ class Snake {
         if ((x % (xPan / 20)) == 0 && (y % (yPan / 20)) == 0 && prev != vector) {
             prev = vector;
             if (tail.size() > 0) {
+                TurnPoint tempTP = new TurnPoint(x, y, prev);
                 for (int i = 0; i < tail.size(); i++) {
-                    tail.get(i).turnPoints.add(new TurnPoint(x, y, prev));
+                    tail.get(i).turnPoints.add(tempTP);
                 }
             }
         }

@@ -2,6 +2,8 @@ package c14;
 
 import java.util.*;
 
+import static java.lang.Thread.sleep;
+
 class TailPart {
     final int width;
     final int height;
@@ -32,6 +34,17 @@ class TailPart {
                 x = xHead;
                 break;
         }
+        new Thread(() -> {
+            while (true) {
+                try {
+                    sleep(4);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                checkTurnPoints();
+                move();
+            }
+        }).start();
     }
 
     TailPart(TailPart tp) {
@@ -60,8 +73,7 @@ class TailPart {
                 turnPoints.peek().x == x &&
                 turnPoints.peek().y == y)
         {
-            prev = turnPoints.peek().prev;
-            turnPoints.poll();
+            prev = turnPoints.poll().prev;
         }
     }
 }
