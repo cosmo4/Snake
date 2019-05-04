@@ -8,7 +8,7 @@ class MyFrame extends JFrame {
 
     MyFrame(){
         super("Snake");
-        ImageIcon img = new ImageIcon("C:\\Semestr I\\Programowanie obiektowe i GUI\\Challenges\\src\\c14\\Pictograms-nps-misc-rattlesnakes.png");
+        ImageIcon img = new ImageIcon("C:\\Semestr I\\Programowanie obiektowe i GUI\\Challenges\\src\\c14\\Snacklogo.png");
         setIconImage(img.getImage());
         myPanel = new MyPanel();
         add(myPanel);
